@@ -87,14 +87,6 @@ export default class ArticleImage extends Component {
                     }
 
                     @media(max-width: 700px) {
-                        .thumbnails {
-                            order: -1;
-                        }
-
-                        .sub-image-bar > div {
-                            flex-basis: 100%;
-                        }
-
                         .thumbnail {
                             width: 50px;
                             margin-left: 0.5rem;

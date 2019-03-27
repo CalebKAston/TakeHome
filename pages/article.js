@@ -6,24 +6,13 @@ const Article = (props) => (
     <Layout>
         <h2>{props.article.title}</h2>
         <ArticleImage images={props.article.images} />
-        {props.article.content.map((content, index) => {
-            if(content.subtitle) {
-                return (
-                    <section key={`section-${index}`}>
-                        <h3>{ content.subtitle }</h3>
-                        <p>{ content.text }</p>
-                        {index === 0 && <ArticleVideo video={props.article.video} />}
-                    </section>
-                );
-            } else {
-                return (
-                    <section key={`section-${index}`}>
-                        <p>{ content.text }</p>
-                        {index === 0 && <ArticleVideo video={props.article.video} />}
-                    </section>
-                );
-            }
-        })}
+        {props.article.content.map((content, index) => (
+            <section key={`section-${index}`}>
+                {content.subtitle && <h3>{ content.subtitle }</h3>}
+                <p>{ content.text }</p>
+                {index === 0 && <ArticleVideo video={props.article.video} />}
+            </section>
+        ))}
         <style jsx>{`
         `}</style>
     </Layout>

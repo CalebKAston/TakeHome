@@ -25,7 +25,7 @@ export default class ArticleVideo extends Component {
     }
     
     componentWillUnmount() {
-        window.removeEventListener('focus', this.windowBlurListener);
+        window.removeEventListener('blur', this.windowBlurListener);
     }
 
     render() {
